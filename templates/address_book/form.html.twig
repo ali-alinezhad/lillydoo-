@@ -1,0 +1,108 @@
+<div>
+    {{ form_start(form) }}
+        <div style="color: red">
+            {{ form_errors(form) }}
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {{ form_label(form.firstName) }}
+            </div>
+            <div class="col">
+                {{ form_widget(form.firstName) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {{ form_label(form.lastName) }}
+            </div>
+            <div class="col">
+                {{ form_widget(form.lastName) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {{ form_label(form.street) }}
+            </div>
+            <div class="col">
+                {{ form_widget(form.street) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {{ form_label(form.zip) }}
+            </div>
+            <div class="col">
+                {{ form_widget(form.zip) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {{ form_label(form.city) }}
+            </div>
+            <div class="col">
+                {{ form_widget(form.city) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {{ form_label(form.country) }}
+            </div>
+            <div class="col">
+                {{ form_widget(form.country) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {{ form_label(form.phone) }}
+            </div>
+            <div class="col">
+                {{ form_widget(form.phone) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {{ form_label(form.birthday) }}
+            </div>
+            <div class="col">
+                {{ form_widget(form.birthday) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {{ form_label(form.email) }}
+            </div>
+            <div class="col">
+                {{ form_widget(form.email) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {{ form_label(form.picture) }}
+            </div>
+            <div class="col">
+                {{ form_widget(form.picture) }}
+            </div>
+            <div style="color: #8959A8;font-size: 12px">{{ form.picture.vars.data }}</div>
+            <span style="color: red">{{ form_errors(form.picture) }}</span>
+        </div>
+
+        <div class="row" style="padding-top: 20px">
+            <div class="col">
+                {{ form_label(form.save) }}
+            </div>
+            <div class="col">
+                {{ form_widget(form.save) }}
+            </div>
+        </div>
+    {{ form_end(form) }}
+</div>

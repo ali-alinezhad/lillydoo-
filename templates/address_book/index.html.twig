@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Show All addresses{% endblock %}
+
+{% block body %}
+<div style="padding-bottom: 10px">
+    <div>
+        {% for message in app.flashes('success') %}
+            <div style="color: green">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+    <div>
+        {% for message in app.flashes('errors') %}
+            <div style="color: red">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<div>
+    {% if addresses %}
+    <table border="2">
+        <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Street</td>
+            <td>Zip Code</td>
+            <td>City</td>
+            <td>Country</td>
+            <td>Phone Number</td>
+            <td>Birthday</td>
+            <td>Email</td>
+            <td>Image</td>
+            <td>Action</td>
+        </tr>
+    {% for address in addresses %}
+        <tr>
+            <td>{{ address.firstName }}</td>
+            <td>{{ address.lastName }}</td>
+            <td>{{ address.street }}</td>
+            <td>{{ address.zip }}</td>
+            <td>{{ address.city }}</td>
+            <td>{{ address.country }}</td>
+            <td>{{ address.phone }}</td>
+            <td>{{ address.birthday|date('d-m-Y') }}</td>
+            <td>{{ address.email }}</td>
+            <td>{{ address.picture }}</td>
+            <td>
+                <i style="padding-right: 5px"><a href="{{ path('edit.address',{'id':address.id}) }}"> Edit </a></i>
+                <i><a href="{{ path('delete.address',{'id':address.id}) }}"> Delete </a></i>
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+    {% endif %}
+    <div style="padding-top: 20px">
+        <a href="{{ path('create.address') }}"> Add new address </a>
+    </div>
+</div>
+{% endblock %}
